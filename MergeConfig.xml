@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mergeConfig>
+	<deploymentRegion name="Development">
+		<fileInfo fileName="D:\Project\App.config">
+			<maintainConfig findXPath="//root/configuration/add[@key='TestConfig']" replaceAttribute="value" replaceWith="ABC" />
+			<maintainConfig findXPath="//root/connections/connection[@ID='main']/dbstring" replaceAttribute="connectionString" replaceWith="Data Source=localhost" />
+		</fileInfo>
+		<fileInfo fileName="D:\Project\AppTest\Bin\AppTest.exe.config">
+			<maintainConfig findXPath="//configuration/exceptionManagement/publisher" replaceAttribute="LogDirectory" replaceWith="D:\ErrorLog" />
+		</fileInfo>
+		<fileInfo fileName="D:\Project\TestWeb\web.config">
+			<maintainConfig findXPath="//configuration/appSettings/add[@key='AppName']" replaceAttribute="value" replaceWith="Test App" />
+		</fileInfo>		
+	</deploymentRegion>
+	<deploymentRegion name="Test">
+		<fileInfo fileName="C:\Project\App.config">
+			<maintainConfig findXPath="//root/configuration/add[@key='TestConfig']" replaceAttribute="value" replaceWith="TEST" />
+			<maintainConfig findXPath="//root/connections/connection[@ID='main']/dbstring" replaceAttribute="connectionString" replaceWith="Data Source=test" />
+		</fileInfo>
+		<fileInfo fileName="C:\Project\AppTest\Bin\AppTest.exe.config">
+			<maintainConfig findXPath="//configuration/exceptionManagement/publisher" replaceAttribute="LogDirectory" replaceWith="C:\ErrorLog" />
+		</fileInfo>
+		<fileInfo fileName="C:\Project\TestWeb\web.config">
+			<maintainConfig findXPath="//configuration/appSettings/add[@key='AppName']" replaceAttribute="value" replaceWith="Prod App" />
+		</fileInfo>		
+	</deploymentRegion>
+</mergeConfig>
